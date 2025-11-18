@@ -1,0 +1,97 @@
+body {
+    background: linear-gradient(135deg, #020202, #001a33);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-family: "Poppins", sans-serif;
+}
+
+.card-wrap {
+    width: 420px;
+    background: rgba(255,255,255,0.08);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    padding: 30px;
+    border-radius: 22px;
+    border: 1px solid rgba(255,255,255,0.15);
+    box-shadow: 0 0 25px rgba(0,200,255,0.25);
+    transition: 0.3s;
+}
+
+.card-wrap:hover {
+    box-shadow: 0 0 35px rgba(0,200,255,0.45);
+}
+
+
+.title {
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 15px;
+    text-align: center;
+    letter-spacing: 1px;
+    text-shadow: 0 0 12px rgba(0,200,255,0.6);
+}
+
+input {
+    padding: 12px;
+    background: rgba(255,255,255,0.1);
+    border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 14px;
+    color: #fff;
+}
+
+input::placeholder {
+    color: rgba(255,255,255,0.6);
+}
+
+.btn-custom {
+    background: #00d0ff;
+    border: none;
+    border-radius: 14px;
+    padding: 12px 22px;
+    color: #000;
+    font-weight: 600;
+    width: 100%;
+    margin-top: 10px;
+    box-shadow: 0 0 15px rgba(0,200,255,0.7);
+    transition: 0.3s;
+}
+
+.btn-custom:hover {
+    background: #00ffff;
+    box-shadow: 0 0 25px rgba(0,255,255,1);
+}
+
+
+#loader {
+    font-weight: bold;
+    font-size: 16px;
+    color: #00d0ff;
+    text-shadow: 0 0 12px cyan;
+    text-align: center;
+    margin-top: 10px;
+}
+
+
+.stat {
+    background: rgba(255,255,255,0.08);
+    padding: 12px 15px;
+    margin-bottom: 12px;
+    border-radius: 12px;
+    font-size: 18px;
+    display: flex;
+    justify-content: space-between;
+    border-left: 4px solid #00d0ff;
+    transition: 0.2s;
+}
+
+.stat:hover {
+    background: rgba(255,255,255,0.15);
+    transform: scale(1.02);
+}
+
+.hide { 
+    display: none;
+     }
