@@ -23,11 +23,20 @@ const fetchCovid = async () => {
 
     try {
         let res = await fetch("https://api.rootnet.in/covid19-in/stats/latest");
-        let data = await res.json();
 
-        let stateData = data.data.regional.find(
-            s => s.loc.toLowerCase() === state.toLowerCase()
-        );
+        let covidData = (await res.json()).data;
+
+
+        let stateData = null;
+
+        for (let i in covidData.regional) {
+            let item = covidData.regional[i];
+
+            if (item.loc.toLowerCase() === state.toLowerCase()) {
+                stateData = item;
+                break;
+            }
+        }
 
         if (!stateData) {
             alert("State not found!");
@@ -40,7 +49,9 @@ const fetchCovid = async () => {
         deaths.innerHTML = stateData.deaths;
 
         active.innerHTML =
-            stateData.totalConfirmed - stateData.discharged - stateData.deaths;
+            stateData.totalConfirmed -
+            stateData.discharged -
+            stateData.deaths;
 
         result.classList.remove("hide");
 
@@ -52,7 +63,7 @@ const fetchCovid = async () => {
 };
 
 searchBtn.addEventListener("click", fetchCovid);
+
 stateInput.addEventListener("keypress", e => {
-    if (e.key === "Enter")
-     fetchCovid();
+    if (e.key === "Enter") fetchCovid();
 });
